@@ -12,11 +12,11 @@ import autonoma.directorioDeAmistades.views.VentanaPrincipal;
  * @author marti
  */
 public class DirectorioDeAmistades {
-    private String nombre;
-    private String telefono;
-    private String correo;
-    Persona persona = new Persona(nombre,telefono,correo);
-        
-    VentanaPrincipal ventana = new VentanaPrincipal(persona);
-    ventana.setVisible(true);
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        VentanaPrincipal ventana= new VentanaPrincipal();
+        ventana.setVisible(true);
+    }    
 }

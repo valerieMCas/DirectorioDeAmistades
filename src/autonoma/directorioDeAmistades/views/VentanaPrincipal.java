@@ -19,11 +19,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form VentanaPrincipal
      */
-    public VentanaPrincipal(Persona persona) {
+    public VentanaPrincipal() {
+        this.persona=persona;
         initComponents();
         this.setLocationRelativeTo(null);
         try{
-            this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/DirectorioDeAmistades/images/-Directorio logo principal.png")).getImage());
+           this.setIconImage(new ImageIcon(getClass().getResource("/autonoma/DirectorioDeAmistades/images/-Directorio logo principal.png")).getImage());
         }catch(Exception e){
             
         }
@@ -303,8 +304,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void BotonBuscarAmigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarAmigoMouseClicked
 
-        
-
     }//GEN-LAST:event_BotonBuscarAmigoMouseClicked
 
     private void BotonBuscarAmigoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarAmigoMouseEntered
@@ -332,11 +331,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonSalirMouseClicked
 
     private void BotonSalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonSalirMouseEntered
-        // TODO add your handling code here:
+        this.mouseEntered(BotonSalir);
     }//GEN-LAST:event_BotonSalirMouseEntered
 
     private void BotonSalirMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonSalirMouseExited
-        // TODO add your handling code here:
+        this.mouseExited(BotonSalir);
     }//GEN-LAST:event_BotonSalirMouseExited
 
     private void mouseEntered(JPanel panel){
