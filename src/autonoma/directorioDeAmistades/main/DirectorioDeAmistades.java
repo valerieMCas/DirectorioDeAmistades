@@ -4,10 +4,19 @@
  */
 package autonoma.directorioDeAmistades.main;
 
+import autonoma.directorioDeAmistades.moldels.Persona;
+import autonoma.directorioDeAmistades.views.VentanaPrincipal;
+
 /**
  *
  * @author marti
  */
 public class DirectorioDeAmistades {
-    
+    private String nombre;
+    private String telefono;
+    private String correo;
+    Persona persona = new Persona(nombre,telefono,correo);
+        
+    VentanaPrincipal ventana = new VentanaPrincipal(persona);
+    ventana.setVisible(true);
 }
