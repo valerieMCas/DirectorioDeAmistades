@@ -8,6 +8,7 @@ import autonoma.directorioDeAmistades.moldels.Directorio;
 import autonoma.directorioDeAmistades.moldels.Persona;
 import java.awt.Color;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 /**
@@ -56,6 +57,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         BotonSalir = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
+        BotonInfo = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,17 +70,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(232, 232, 232)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(lblCalculadora)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(237, 237, 237))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(30, 30, 30)
                 .addComponent(lblCalculadora)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
@@ -243,6 +245,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addContainerGap(32, Short.MAX_VALUE))
         );
 
+        BotonInfo.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        BotonInfo.setText("Informacion");
+        BotonInfo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonInfoMouseClicked(evt);
+            }
+        });
+        BotonInfo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BotonInfoActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -257,6 +272,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 .addGap(46, 46, 46)
                 .addComponent(BotonSalir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(46, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(BotonInfo, javax.swing.GroupLayout.PREFERRED_SIZE, 274, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(228, 228, 228))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -267,7 +286,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                     .addComponent(BotonMostrarDirectorio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotonAgregarAmigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(BotonBuscarAmigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(54, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(BotonInfo)
+                .addContainerGap(25, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -339,6 +360,27 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.mouseExited(BotonSalir);
     }//GEN-LAST:event_BotonSalirMouseExited
 
+    private void BotonInfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonInfoMouseClicked
+        JOptionPane.showMessageDialog(this, "INFORMACION:\n" +
+"	\n" +
+"	-Taller:\n" +
+"	*Directorio de amistades.\n" +
+"\n" +
+"	-Asignatura:\n" +
+"	*Programacion orientada a objetos(POO).\n" +
+"\n" +
+"	-Universidad:\n" +
+"	*Universidad Autonoma de Manizales(UAM).\n" +
+"\n" +
+"	-Desarrolladores:\n" +
+"	* Valerie Moreno\n" +
+"	* Martin Taborda Aristizabal.");
+    }//GEN-LAST:event_BotonInfoMouseClicked
+
+    private void BotonInfoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BotonInfoActionPerformed
+
+    }//GEN-LAST:event_BotonInfoActionPerformed
+
     private void mouseEntered(JPanel panel){
         panel.setBackground(new Color(223,220,220));
     }
@@ -354,6 +396,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel BotonAgregarAmigo;
     private javax.swing.JPanel BotonBuscarAmigo;
+    private javax.swing.JButton BotonInfo;
     private javax.swing.JPanel BotonMostrarDirectorio;
     private javax.swing.JPanel BotonSalir;
     private javax.swing.JLabel jLabel10;
