@@ -326,7 +326,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonAgregarAmigoMouseExited
 
     private void BotonBuscarAmigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarAmigoMouseClicked
-        System.out.println("Buscar");
+        BuscarAmigo buscar = new BuscarAmigo(this, true, this.directorio, this);
+        buscar.setVisible(true);
     }//GEN-LAST:event_BotonBuscarAmigoMouseClicked
 
     private void BotonBuscarAmigoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarAmigoMouseEntered

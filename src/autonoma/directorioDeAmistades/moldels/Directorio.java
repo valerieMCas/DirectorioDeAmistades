@@ -41,7 +41,7 @@ public class Directorio {
     ///////////////////////////////////////////////////////////////////////
     //////Metodos
     
-    public void agregarAmigo(Persona persona) throws MismoAmigoException{
+    public void agregarAmigo(Persona persona) throws MismoAmigoException, ValidarCamposLlenosException, VerificaionCorreoException,VerificacionTelefonoException{
         //try{//intentar validar
             String telefonoLimpio = persona.getTelefono().trim().replaceAll("\\D", "");
             if (persona.getCorreo().trim().isEmpty() || persona.getNombre().trim().isEmpty() || persona.getTelefono().trim().isEmpty()){
@@ -74,16 +74,18 @@ public class Directorio {
         }*/
         listaAmigos.add(persona);
     }
-    public void buscarAmigo(Persona persona, String amigoBuscar){
-        try{
-            for(int i=0; i<=listaAmigos.size(); i++){
-                if(!this.listaAmigos.get(i).getCorreo().equals(amigoBuscar)){
-                    throw new SeEncuentraAmigoException();
-                }
-            }
-        }catch(SeEncuentraAmigoException e){
-            System.out.println(e.getMessage());
+    public Persona buscarAmigo(String amigoBuscar)throws SeEncuentraAmigoException, VerificaionCorreoException{
+        if (amigoBuscar.indexOf('@') == -1) {  
+            throw new VerificaionCorreoException();
         }
+
+    for (int i = 0; i < listaAmigos.size(); i++) {
+        if (this.listaAmigos.get(i).getCorreo().equals(amigoBuscar)) {
+            return listaAmigos.get(i); 
+        }
+    }
+
+    throw new SeEncuentraAmigoException();
     }
     public boolean salir(){
         return false;
