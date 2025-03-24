@@ -27,7 +27,7 @@ public class Directorio {
     }
     public Directorio(ArrayList<Persona> listaAmigos) {
         this.listaAmigos = listaAmigos;
-    }
+    }   
     ///////////////////////////////////////////////////////////////////////
     //////Metodos de aceso
     public ArrayList<Persona> getListaAmigos() {
