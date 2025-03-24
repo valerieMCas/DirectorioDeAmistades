@@ -22,6 +22,9 @@ public class Directorio {
     private ArrayList <Persona> listaAmigos;
     ///////////////////////////////////////////////////////////////////////
     //////Construtor
+    public Directorio() {
+        this.listaAmigos = new ArrayList<>();
+    }
     public Directorio(ArrayList<Persona> listaAmigos) {
         this.listaAmigos = listaAmigos;
     }

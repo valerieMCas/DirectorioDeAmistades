@@ -6,6 +6,9 @@ package autonoma.directorioDeAmistades.main;
 
 import autonoma.directorioDeAmistades.moldels.Persona;
 import autonoma.directorioDeAmistades.views.VentanaPrincipal;
+import autonoma.directorioDeAmistades.moldels.Directorio;
+
+import java.util.ArrayList;
 
 /**
  *
@@ -16,7 +19,10 @@ public class DirectorioDeAmistades {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        VentanaPrincipal ventana= new VentanaPrincipal();
+        
+        Directorio directorio= new Directorio();
+        
+        VentanaPrincipal ventana= new VentanaPrincipal(directorio);
         ventana.setVisible(true);
     }    
 }

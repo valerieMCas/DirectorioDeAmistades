@@ -4,6 +4,7 @@
  */
 package autonoma.directorioDeAmistades.views;
 
+import autonoma.directorioDeAmistades.moldels.Directorio;
 import autonoma.directorioDeAmistades.moldels.Persona;
 import java.awt.Color;
 import javax.swing.ImageIcon;
@@ -15,12 +16,12 @@ import javax.swing.JPanel;
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
 
-    private Persona persona;
+    private Directorio directorio;
     /**
      * Creates new form VentanaPrincipal
      */
-    public VentanaPrincipal() {
-        this.persona=persona;
+    public VentanaPrincipal(Directorio directorio) { 
+        
         initComponents();
         this.setLocationRelativeTo(null);
         try{
@@ -28,7 +29,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         }catch(Exception e){
             
         }
-        this.persona=persona;
+        this.directorio=directorio;
     }
 
     /**
@@ -291,7 +292,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BotonAgregarAmigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonAgregarAmigoMouseClicked
-        
+        System.out.println("Agregar");
     }//GEN-LAST:event_BotonAgregarAmigoMouseClicked
 
     private void BotonAgregarAmigoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonAgregarAmigoMouseEntered
@@ -303,7 +304,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonAgregarAmigoMouseExited
 
     private void BotonBuscarAmigoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarAmigoMouseClicked
-
+        System.out.println("Buscar");
     }//GEN-LAST:event_BotonBuscarAmigoMouseClicked
 
     private void BotonBuscarAmigoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonBuscarAmigoMouseEntered
@@ -315,7 +316,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonBuscarAmigoMouseExited
 
     private void BotonMostrarDirectorioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonMostrarDirectorioMouseClicked
-        
+        System.out.println("mostrar");
     }//GEN-LAST:event_BotonMostrarDirectorioMouseClicked
 
     private void BotonMostrarDirectorioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonMostrarDirectorioMouseEntered
@@ -327,7 +328,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonMostrarDirectorioMouseExited
 
     private void BotonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonSalirMouseClicked
-        // TODO add your handling code here:
+        System.out.println("salir");
     }//GEN-LAST:event_BotonSalirMouseClicked
 
     private void BotonSalirMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonSalirMouseEntered
