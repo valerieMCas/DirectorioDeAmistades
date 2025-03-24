@@ -42,14 +42,15 @@ public class Directorio {
     //////Metodos
     
     public void agregarAmigo(Persona persona) throws MismoAmigoException{
-        try{//intentar validar
+        //try{//intentar validar
+            String telefonoLimpio = persona.getTelefono().trim().replaceAll("\\D", "");
             if (persona.getCorreo().trim().isEmpty() || persona.getNombre().trim().isEmpty() || persona.getTelefono().trim().isEmpty()){
                 throw new ValidarCamposLlenosException();
             }
             if( persona.getCorreo().indexOf('@')==-1){
                 throw new VerificaionCorreoException();
             }
-            if (!persona.getTelefono().startsWith("606")||persona.getTelefono().startsWith("30")){
+            if (!(telefonoLimpio.startsWith("606") || telefonoLimpio.startsWith("30"))){
                 throw new VerificacionTelefonoException();
             }
 
@@ -60,14 +61,9 @@ public class Directorio {
                     }   
                 }
             }
-            try{//intentar guardar
-                listaAmigos.add(persona);
-                System.out.println("Se agrego Correctamente");
-            }catch(Exception e){
-                System.out.println("Hubo un probrema en agregar");
-            }
+            
 
-        }catch(ValidarCamposLlenosException e){
+        /*}catch(ValidarCamposLlenosException e){
             System.out.println(e.getMessage());
         }catch(MismoAmigoException e){
             System.out.println(e.getMessage());
@@ -75,7 +71,8 @@ public class Directorio {
             System.out.println(e.getMessage());
         }catch(VerificacionTelefonoException e){
             System.out.println(e.getMessage());
-        }      
+        }*/
+        listaAmigos.add(persona);
     }
     public void buscarAmigo(Persona persona, String amigoBuscar){
         try{

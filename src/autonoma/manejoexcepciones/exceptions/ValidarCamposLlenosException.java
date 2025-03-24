@@ -12,6 +12,6 @@ package autonoma.manejoexcepciones.exceptions;
 public class ValidarCamposLlenosException extends RuntimeException{
 
     public ValidarCamposLlenosException() {
-        super("El numero de telefono debe comenzar en 606 o 30");
+        super("Todos los campos deben estar llenos");
     }
 }

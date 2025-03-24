@@ -12,6 +12,6 @@ package autonoma.manejoexcepciones.exceptions;
 public class VerificacionTelefonoException extends RuntimeException{
 
     public VerificacionTelefonoException() {
-        super("Todos los campos deben estar llenos");
+        super("Los telefonos deben colmenzar por 606 y 30");
     }
 }
