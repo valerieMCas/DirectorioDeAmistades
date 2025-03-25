@@ -19,35 +19,35 @@ import java.util.ArrayList;
 public class Directorio {
     ///////////////////////////////////////////////////////////////////////
     //////Atributos
-    private ArrayList <Persona> listaAmigos;
+    private ArrayList <Amigo> listaAmigos;
     ///////////////////////////////////////////////////////////////////////
     //////Construtor
     public Directorio() {
         this.listaAmigos = new ArrayList<>();
     }
-    public Directorio(ArrayList<Persona> listaAmigos) {
+    public Directorio(ArrayList<Amigo> listaAmigos) {
         this.listaAmigos = listaAmigos;
     }   
     ///////////////////////////////////////////////////////////////////////
     //////Metodos de aceso
-    public ArrayList<Persona> getListaAmigos() {
+    public ArrayList<Amigo> getListaAmigos() {
         return listaAmigos;
     }
 
-    public void setListaAmigos(ArrayList<Persona> listaAmigos) {
+    public void setListaAmigos(ArrayList<Amigo> listaAmigos) {
         this.listaAmigos = listaAmigos;
     }
     
     ///////////////////////////////////////////////////////////////////////
     //////Metodos
     
-    public void agregarAmigo(Persona persona) throws MismoAmigoException, ValidarCamposLlenosException, VerificaionCorreoException,VerificacionTelefonoException{
+    public void agregarAmigo(Amigo amigo) throws MismoAmigoException, ValidarCamposLlenosException, VerificaionCorreoException,VerificacionTelefonoException{
         //try{//intentar validar
-            String telefonoLimpio = persona.getTelefono().trim().replaceAll("\\D", "");
-            if (persona.getCorreo().trim().isEmpty() || persona.getNombre().trim().isEmpty() || persona.getTelefono().trim().isEmpty()){
+            String telefonoLimpio = amigo.getTelefono().trim().replaceAll("\\D", "");
+            if (amigo.getCorreo().trim().isEmpty() || amigo.getNombre().trim().isEmpty() || amigo.getTelefono().trim().isEmpty()){
                 throw new ValidarCamposLlenosException();
             }
-            if( persona.getCorreo().indexOf('@')==-1){
+            if( amigo.getCorreo().indexOf('@')==-1){
                 throw new VerificaionCorreoException();
             }
             if (!(telefonoLimpio.startsWith("606") || telefonoLimpio.startsWith("30"))){
@@ -56,7 +56,7 @@ public class Directorio {
 
             if(listaAmigos.size()>1){
                 for(int i=0; i<=this.listaAmigos.size(); i++){
-                    if (this.listaAmigos.get(i).getCorreo().equals(persona.getCorreo())){
+                    if (this.listaAmigos.get(i).getCorreo().equals(amigo.getCorreo())){
                         throw new MismoAmigoException();
                     }   
                 }
@@ -72,20 +72,20 @@ public class Directorio {
         }catch(VerificacionTelefonoException e){
             System.out.println(e.getMessage());
         }*/
-        listaAmigos.add(persona);
+        listaAmigos.add(amigo);
     }
-    public Persona buscarAmigo(String amigoBuscar)throws SeEncuentraAmigoException, VerificaionCorreoException{
+    public Amigo buscarAmigo(String amigoBuscar)throws SeEncuentraAmigoException, VerificaionCorreoException{
         if (amigoBuscar.indexOf('@') == -1) {  
             throw new VerificaionCorreoException();
         }
 
-    for (int i = 0; i < listaAmigos.size(); i++) {
-        if (this.listaAmigos.get(i).getCorreo().equals(amigoBuscar)) {
-            return listaAmigos.get(i); 
+        for (int i = 0; i < listaAmigos.size(); i++) {
+            if (this.listaAmigos.get(i).getCorreo().equals(amigoBuscar)) {
+                return listaAmigos.get(i); 
+            }
         }
-    }
 
-    throw new SeEncuentraAmigoException();
+       throw new SeEncuentraAmigoException();
     }
     public void eliminarAmigo(int po){
         listaAmigos.remove(po);

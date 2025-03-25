@@ -4,8 +4,8 @@
  */
 package autonoma.directorioDeAmistades.views;
 
+import autonoma.directorioDeAmistades.moldels.Amigo;
 import autonoma.directorioDeAmistades.moldels.Directorio;
-import autonoma.directorioDeAmistades.moldels.Persona;
 import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -18,7 +18,7 @@ import javax.swing.table.TableModel;
  */
 public class MostrarAmigos extends javax.swing.JDialog {
     private Directorio directorio;
-    private ArrayList<Persona> amigos;
+    private ArrayList<Amigo> amigos;
     /**
      * Creates new form MostrarAmigos
      */
@@ -171,7 +171,7 @@ public class MostrarAmigos extends javax.swing.JDialog {
     private void eliminar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminar1ActionPerformed
         int fila = this.TablaAmigos.getSelectedRow();
         if(fila >= 0){
-            Persona l = this.amigos.get(fila);
+            Amigo l = this.amigos.get(fila);
             int opc = JOptionPane.showConfirmDialog(this, "desea eliminar el amigo: "+l.getNombre()+"permanentemente?");
             if(opc == 0){
                 this.directorio.eliminarAmigo(opc);
@@ -190,7 +190,7 @@ public class MostrarAmigos extends javax.swing.JDialog {
         TableModel dataModel = TablaAmigos.getModel();
         
         for(int i = 0; i < this.amigos.size(); i++){
-            Persona l = this.amigos.get(i);
+            Amigo l = this.amigos.get(i);
             
             dataModel.setValueAt(l.getNombre(), i ,0 );
             dataModel.setValueAt(l.getTelefono(), i ,1 );

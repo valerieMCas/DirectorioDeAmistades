@@ -4,8 +4,8 @@
  */
 package autonoma.directorioDeAmistades.views;
 
+import autonoma.directorioDeAmistades.moldels.Amigo;
 import autonoma.directorioDeAmistades.moldels.Directorio;
-import autonoma.directorioDeAmistades.moldels.Persona;
 import autonoma.manejoexcepciones.exceptions.SeEncuentraAmigoException;
 import autonoma.manejoexcepciones.exceptions.VerificaionCorreoException;
 import javax.swing.ImageIcon;
@@ -171,7 +171,7 @@ public class BuscarAmigo extends javax.swing.JDialog {
         String CorreoElectronicoBuscar = this.CorreoBuscar.getText();
         
         try{
-             Persona amigo = this.directorio.buscarAmigo(CorreoElectronicoBuscar); 
+            Amigo amigo = this.directorio.buscarAmigo(CorreoElectronicoBuscar); 
 
             // Mostrar información en un cuadro de diálogo
             JOptionPane.showMessageDialog(this, 

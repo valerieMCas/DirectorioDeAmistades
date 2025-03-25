@@ -4,6 +4,7 @@
  */
 package autonoma.directorioDeAmistades.views;
 
+import autonoma.directorioDeAmistades.moldels.Amigo;
 import autonoma.directorioDeAmistades.moldels.Directorio;
 import autonoma.directorioDeAmistades.moldels.Persona;
 import autonoma.manejoexcepciones.exceptions.MismoAmigoException;
@@ -220,9 +221,9 @@ public class AgregarAmigo extends javax.swing.JDialog {
             this.TelefonoAmigo1.setText(" ");
         }
         String correo = this.CorreoEletronico.getText();
-        Persona persona= new Persona(nombre, telefono, correo);
+        Amigo amigo= new Amigo(nombre, telefono, correo);
         try{
-            this.directorio.agregarAmigo(persona);
+            this.directorio.agregarAmigo(amigo);
             JOptionPane.showMessageDialog(this, "El amigo fue agregado exitosamente!!!");
             this.dispose();
         }catch(ValidarCamposLlenosException e){

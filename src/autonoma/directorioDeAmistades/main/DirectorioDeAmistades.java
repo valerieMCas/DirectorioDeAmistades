@@ -4,7 +4,7 @@
  */
 package autonoma.directorioDeAmistades.main;
 
-import autonoma.directorioDeAmistades.moldels.Persona;
+
 import autonoma.directorioDeAmistades.views.VentanaPrincipal;
 import autonoma.directorioDeAmistades.moldels.Directorio;
 
