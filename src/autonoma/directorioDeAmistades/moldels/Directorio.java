@@ -87,6 +87,9 @@ public class Directorio {
 
     throw new SeEncuentraAmigoException();
     }
+    public void eliminarAmigo(int po){
+        listaAmigos.remove(po);
+    }
     public boolean salir(){
         return false;
     }

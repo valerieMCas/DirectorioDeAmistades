@@ -339,7 +339,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonBuscarAmigoMouseExited
 
     private void BotonMostrarDirectorioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonMostrarDirectorioMouseClicked
-        System.out.println("mostrar");
+        MostrarAmigos mostrar = new MostrarAmigos(this, true, this.directorio);
+        mostrar.setVisible(true);
+        
     }//GEN-LAST:event_BotonMostrarDirectorioMouseClicked
 
     private void BotonMostrarDirectorioMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonMostrarDirectorioMouseEntered
@@ -351,6 +353,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_BotonMostrarDirectorioMouseExited
 
     private void BotonSalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonSalirMouseClicked
+        JOptionPane.showMessageDialog(this, "Saliendo...");
         this.dispose();
     }//GEN-LAST:event_BotonSalirMouseClicked
 
