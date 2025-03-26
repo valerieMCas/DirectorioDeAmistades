@@ -90,6 +90,16 @@ public class Directorio {
     public void eliminarAmigo(int po){
         listaAmigos.remove(po);
     }
+    public boolean actualizarLibro(String nombre, Amigo nuevoAmigo) {
+        for (int i = 0; i < listaAmigos.size(); i++) {
+            if (listaAmigos.get(i).getNombre()== nombre) {
+                listaAmigos.set(i, nuevoAmigo);
+                return true;
+            }
+        }
+        return false;
+    }
+
     public boolean salir(){
         return false;
     }

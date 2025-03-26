@@ -4,9 +4,11 @@
  */
 package autonoma.directorioDeAmistades.views;
 
+import autonoma.directorioDeAmistades.moldels.Amigo;
 import autonoma.directorioDeAmistades.moldels.Directorio;
 import autonoma.directorioDeAmistades.moldels.Persona;
 import java.awt.Color;
+import java.util.ArrayList;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -18,6 +20,7 @@ import javax.swing.JPanel;
 public class VentanaPrincipal extends javax.swing.JFrame {
 
     private Directorio directorio;
+    private ArrayList<Amigo> amigos;
     /**
      * Creates new form VentanaPrincipal
      */

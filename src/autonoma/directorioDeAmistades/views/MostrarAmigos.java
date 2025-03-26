@@ -7,6 +7,7 @@ package autonoma.directorioDeAmistades.views;
 import autonoma.directorioDeAmistades.moldels.Amigo;
 import autonoma.directorioDeAmistades.moldels.Directorio;
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -19,6 +20,7 @@ import javax.swing.table.TableModel;
 public class MostrarAmigos extends javax.swing.JDialog {
     private Directorio directorio;
     private ArrayList<Amigo> amigos;
+    private VentanaPrincipal ventanaPrincipal;
     /**
      * Creates new form MostrarAmigos
      */
@@ -51,6 +53,7 @@ public class MostrarAmigos extends javax.swing.JDialog {
         TablaAmigos = new javax.swing.JTable();
         Salir1 = new javax.swing.JButton();
         eliminar1 = new javax.swing.JButton();
+        Actualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -120,6 +123,13 @@ public class MostrarAmigos extends javax.swing.JDialog {
             }
         });
 
+        Actualizar.setText("Actualizar");
+        Actualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ActualizarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -130,7 +140,8 @@ public class MostrarAmigos extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(eliminar1)
-                    .addComponent(Salir1))
+                    .addComponent(Salir1)
+                    .addComponent(Actualizar))
                 .addGap(37, 37, 37))
             .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -143,10 +154,12 @@ public class MostrarAmigos extends javax.swing.JDialog {
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 239, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
-                        .addComponent(Salir1)
-                        .addGap(68, 68, 68)
-                        .addComponent(eliminar1)))
+                        .addGap(58, 58, 58)
+                        .addComponent(Actualizar)
+                        .addGap(18, 18, 18)
+                        .addComponent(eliminar1)
+                        .addGap(18, 18, 18)
+                        .addComponent(Salir1)))
                 .addContainerGap(18, Short.MAX_VALUE))
         );
 
@@ -183,6 +196,18 @@ public class MostrarAmigos extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null, "por favor seleccione el amigo que desea eliminar");
         }
     }//GEN-LAST:event_eliminar1ActionPerformed
+
+    private void ActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ActualizarActionPerformed
+        int fila = this.TablaAmigos.getSelectedRow();
+        if(fila >= 0){
+            Amigo l = this.amigos.get(fila);
+            ActualizarAmigo ventanaActualizar=new ActualizarAmigo(this.ventanaPrincipal, true, directorio,this,l);
+            ventanaActualizar.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(null, "por favor seleccione el amigo que desea actualizar");
+        }
+        
+    }//GEN-LAST:event_ActualizarActionPerformed
     public void llenarTabla(){
         DefaultTableModel modelDefault = new DefaultTableModel(new String[]{"Nombre", "Telefono", "Correo Electronico"}, this.amigos.size());
         this.TablaAmigos.setModel(modelDefault);
@@ -200,11 +225,17 @@ public class MostrarAmigos extends javax.swing.JDialog {
         
     }
     
+
+    
+
+
+    
     /**
      * @param args the command line arguments
      */
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Actualizar;
     private javax.swing.JButton Salir1;
     private javax.swing.JTable TablaAmigos;
     private javax.swing.JButton eliminar1;
